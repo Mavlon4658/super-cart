@@ -76,55 +76,34 @@ button {
     }
 
     &_list {
-        position: absolute;
-        left: 0;
-        top: 19px;
         width: 100%;
         z-index: 1;
-        padding: 8px 0;
         display: none;
-
-        @include media(1100) {
-            top: 47px;
-        }
-        
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            z-index: -1;
-        }
+        margin-top: -1px;
 
         li {
             position: relative;
-            padding: 4px 16px;
+            padding: 0 4px 0 16px;
             display: flex;
+            height: 20px;
             align-items: center;
             gap: 8px;
             font-size: 16px;
             cursor: pointer;
             user-select: none;
+
+            @include media(1100) {
+                height: 48px;
+                padding: 0 4px 0 19px;
+            }
             
             span {
                 @extend .text-gradient;
             }
 
-            &.selected {
-                &::after {
-                    @extend .text-gradient;
-                    content: '\2713';
-                    font-size: 16px;
-                    font-family: $font-rostov;
-                    width: 16px;
-                    height: 16px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
+            &:not(:last-child) {
+                border-bottom: 1px dashed transparent;
+                border-image: linear-gradient(90deg, #F4B5EF, #20EBFC) 1;
             }
         }
     }
@@ -228,3 +207,4 @@ button {
 @import './header';
 @import './main';
 @import './footer';
+@import './error';

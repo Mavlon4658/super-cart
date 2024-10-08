@@ -50,18 +50,18 @@
     }
 
     &__container {
-        padding-top: 206px;
+        padding: 206px 0 104px;
         position: relative;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         @include media(1100) {
-            padding-top: 180px;
+            padding: 180px 0 42px;
         }
 
         @include media(576) {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             padding: 120px 0 58px;
         }
     }
@@ -100,7 +100,6 @@
     &__select {
         max-width: 295px;
         padding: 16px;
-        margin-bottom: 226px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -108,8 +107,8 @@
         gap: 10px;
 
         @include media(1100) {
-            margin: 0 auto 620px;
-            max-width: 300px;
+            margin: 0 auto;
+            min-width: 300px;
         }
 
         @include media(576) {

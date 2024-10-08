@@ -11,9 +11,6 @@ if (selects.length) {
         }
 
         list.forEach(a => {
-            if (a.classList.contains('selected')) {
-                text.textContent = a.querySelector('span').textContent;
-            }
             
             a.onclick = () => {
                 list.forEach(b => {
@@ -106,11 +103,19 @@ function swiperMallCard() {
 if (document.querySelector('.mall .swiper')) {
     swiperMallCard();
 }
+
 window.addEventListener("resize", function () {
     if (document.querySelector('.mall .swiper')) {
         swiperMallCard();
     }
 });
+
+let header = document.querySelector('.header');
+let bars = document.querySelector('.header__bars');
+
+bars.onclick = () => {
+    header.classList.toggle('active')
+}
 
 document.addEventListener('click', (e) => {
     if (selects.length) {
