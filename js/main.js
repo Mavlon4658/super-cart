@@ -117,6 +117,22 @@ bars.onclick = () => {
     header.classList.toggle('active')
 }
 
+let accordions = document.querySelectorAll('.accordion__item');
+if (accordions.length) {
+    accordions.forEach(el => {
+        const btn = el.querySelector('.accordion__btn');
+        btn.onclick = () => {
+            el.classList.toggle('active');
+
+            accordions.forEach(a => {
+                if (a != el) {
+                    a.classList.remove('active')
+                }
+            })
+        }
+    })
+}
+
 document.addEventListener('click', (e) => {
     if (selects.length) {
         selects.forEach(el => {

@@ -204,7 +204,55 @@ button {
     }
 }
 
+.breadcrumb {
+    padding: 186px 0 30px;
+
+    @include media(1100) {
+        padding: 160px 0 30px;
+    }
+
+    @include media(1100) {
+        padding: 100px 0 40px;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+
+        a, span {
+            @extend .text-gradient;
+            font-size: 20px;
+        }
+
+        .dots {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: linear-gradient(to right, #F4B5EF, #20EBFC);
+            position: relative;
+            z-index: 1;
+            
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: linear-gradient(to right, #F4B5EF, #20EBFC);
+                filter: blur(2px);
+            }
+        }
+    }
+}
+
 @import './header';
 @import './main';
 @import './footer';
 @import './error';
+@import './faq';
