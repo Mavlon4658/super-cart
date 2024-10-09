@@ -133,6 +133,29 @@ if (accordions.length) {
     })
 }
 
+let tarifSwp = new Swiper('.tarif .swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+        nextEl: '.tarif .swp_btn__next',
+        prevEl: '.tarif .swp_btn__prev',
+    },
+    effect: 'coverflow',
+    coverflowEffect: {
+        rotate: 0,
+        stretch: -1,
+        depth: 10,
+        modifier: 25
+    },
+    breakpoints: {
+        1100: {
+            effect: "fade",
+            spaceBetween: 0,
+        }
+    }
+})
+
 document.addEventListener('click', (e) => {
     if (selects.length) {
         selects.forEach(el => {

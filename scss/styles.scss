@@ -208,10 +208,10 @@ button {
     padding: 186px 0 30px;
 
     @include media(1100) {
-        padding: 160px 0 30px;
+        padding: 180px 0 30px;
     }
 
-    @include media(1100) {
+    @include media(576) {
         padding: 100px 0 40px;
     }
 
@@ -253,6 +253,7 @@ button {
 
 @import './header';
 @import './main';
+@import './faq';
+@import './tarif';
 @import './footer';
 @import './error';
-@import './faq';

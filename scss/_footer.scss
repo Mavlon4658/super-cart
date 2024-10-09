@@ -11,6 +11,13 @@
         height: calc(100% - 40px);
         z-index: -1;
         object-fit: cover;
+
+        @include media(1100) {
+            border: 1px dashed transparent;
+            border-image: linear-gradient(90deg, #F4B5EF, #20EBFC) 1;
+            border-right: 0;
+            border-left: 0;
+        }
     }
 
     &__container {
