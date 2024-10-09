@@ -1426,6 +1426,11 @@ button {
     display: block;
   }
 }
+@media screen and (max-width: 576px) {
+  .tarif__title br {
+    display: none;
+  }
+}
 .tarif__title span:nth-child(2) {
   position: absolute;
   left: 0;
@@ -1707,6 +1712,91 @@ button {
   right: auto;
   left: 222px;
   bottom: 8px;
+}
+@media screen and (max-width: 1100px) {
+  .tarif__card-2 .tarif__card_left {
+    padding: 46px 0 50px;
+  }
+}
+.tarif__card-2 .tarif__card_left .main-img {
+  right: auto;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+}
+.tarif__card-2 .tarif__card_left .price {
+  display: none;
+}
+@media screen and (max-width: 1100px) {
+  .tarif__card-2 .tarif__card_left .price {
+    display: block;
+  }
+}
+.tarif__card-2 .tarif__card_left .price h3 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-family: "Rostov", sans-serif;
+  line-height: 100%;
+}
+.tarif__card-2 .tarif__card_left .price h4 {
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: 100%;
+}
+.tarif__card-2 .tarif__card_right {
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 1100px) {
+  .tarif__card-2 .tarif__card_right {
+    min-height: 400px;
+    justify-content: space-between;
+  }
+}
+.tarif__card-2 .tarif__card_right .main-img {
+  display: none;
+  position: absolute;
+  top: 73px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+@media screen and (max-width: 1100px) {
+  .tarif__card-2 .tarif__card_right .main-img {
+    display: block;
+    width: 164px;
+  }
+}
+.tarif__card-2 .tarif__card_right .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tarif__card-2 .tarif__card_right .text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+.tarif__card-2 .tarif__card_right .text h3 {
+  font-size: 36px;
+  margin-bottom: 28px;
+}
+@media screen and (max-width: 1100px) {
+  .tarif__card-2 .tarif__card_right .text h3 {
+    display: none;
+  }
+}
+.tarif__card-2 .tarif__card_right .text h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+@media screen and (max-width: 1100px) {
+  .tarif__card-2 .tarif__card_right .text h4 {
+    display: none;
+  }
+}
+.tarif__card-2 .tarif__card_right .text h4 span {
+  font-weight: bold;
 }
 
 .footer {

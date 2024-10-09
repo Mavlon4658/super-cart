@@ -29,6 +29,10 @@
             @include media(1100) {
                 display: block;
             }
+
+            @include media(576) {
+                display: none;
+            }
         }
 
         span:nth-child(2) {
@@ -328,6 +332,101 @@
                     right: auto;
                     left: 222px;
                     bottom: 8px;
+                }
+            }
+        }
+
+        &-2 {
+            .tarif__card {
+                &_left {
+                    @include media(1100) {
+                        padding: 46px 0 50px;
+                    }
+
+                    .main-img {
+                        right: auto;
+                        left: 50%;
+                        bottom: 28px;
+                        transform: translateX(-50%);
+                    }
+
+                    .price {
+                        display: none;
+
+                        @include media(1100) {
+                            display: block;
+                        }
+
+                        h3 {
+                            font-size: 36px;
+                            margin-bottom: 10px;
+                            font-family: $font-rostov;
+                            line-height: 100%;
+                        }
+
+                        h4 {
+                            font-size: 16px;
+                            margin-bottom: 0;
+                            line-height: 100%;
+                        }
+                    }
+                }
+
+                &_right {
+                    position: relative;
+                    z-index: 1;
+
+                    @include media(1100) {
+                        min-height: 400px;
+                        justify-content: space-between;
+                    }
+
+                    .main-img {
+                        display: none;
+                        position: absolute;
+                        top: 73px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: -1;
+
+                        @include media(1100) {
+                            display: block;
+                            width: 164px;
+                        }
+                    }
+                    .text {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        p {
+                            font-family: $font-montserrat;
+                            font-size: 20px;
+                            margin-bottom: 3px;
+                        }
+
+                        h3 {
+                            font-size: 36px;
+                            margin-bottom: 28px;
+
+                            @include media(1100) {
+                                display: none;
+                            }
+                        }
+
+                        h4 {
+                            font-family: $font-montserrat;
+                            font-size: 20px;
+
+                            @include media(1100) {
+                                display: none;
+                            }
+
+                            span {
+                                font-weight: bold;
+                            }
+                        }
+                    }
                 }
             }
         }
