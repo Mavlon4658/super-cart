@@ -180,6 +180,7 @@ button {
         @include media(1100) {
             font-size: 32px;
             font-family: $font-neoneon;
+            text-align: center;
         }
     }
     

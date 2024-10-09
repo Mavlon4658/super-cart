@@ -47,6 +47,7 @@ if (examples.length) {
 let reviewSwp = new Swiper('.review .swiper', {
     slidesPerView: 1,
     spaceBetween: 30,
+    initialSlide: 1,
     loop: true,
     navigation: {
         nextEl: '.review .swp_btn__next',
@@ -64,10 +65,12 @@ let reviewSwp = new Swiper('.review .swiper', {
             spaceBetween: 90,
             effect: 'slide',
             slidesPerView: 3,
+            initialSlide: 0,
         },
         1100: {
             slidesPerView: 3,
             effect: 'slide',
+            initialSlide: 0,
         }
     }
 })
@@ -137,6 +140,7 @@ let tarifSwp = new Swiper('.tarif .swiper', {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
+    initialSlide: 1,
     navigation: {
         nextEl: '.tarif .swp_btn__next',
         prevEl: '.tarif .swp_btn__prev',
@@ -150,11 +154,29 @@ let tarifSwp = new Swiper('.tarif .swiper', {
     },
     breakpoints: {
         1100: {
+            initialSlide: 0,
             effect: "fade",
             spaceBetween: 0,
         }
     }
 })
+
+let texts = document.querySelectorAll('.example__card_content')
+if (texts.length) {
+    texts.forEach(el => {
+        let text = el.querySelectorAll('.text div');
+        let btn = el.querySelector('.navigation_btn');
+
+        if (btn) {
+            btn.onclick = () => {
+                text.forEach(t => {
+                    t.classList.toggle('active');
+                });
+                btn.classList.toggle('active');
+            }
+        }
+    })
+}
 
 document.addEventListener('click', (e) => {
     if (selects.length) {
