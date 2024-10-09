@@ -1,29 +1,87 @@
-let selects = document.querySelectorAll('.select');
+const bodyHidden = () => {
+    document.querySelector('body').style.overflow = 'hidden';
+}
 
-if (selects.length) {
-    selects.forEach(el => {
-        const btn = el.querySelector('.select_btn');
-        const text = el.querySelector('.select_btn span');
-        const list = el.querySelectorAll('.select_list li');
+const bodyVisible = () => {
+    document.querySelector('body').style.overflow = 'visible';
+}
 
-        btn.onclick = () => {
-            el.classList.toggle('active');
+const modals = document.querySelectorAll('.modal');
+
+if (modals.length) {
+    modals.forEach(el => {
+        let bg = el.querySelector('.modal__bg'),
+            closeBtn = el.querySelector('.modal__close');
+
+        bg.onclick = () => {
+            el.classList.remove('active');
+            bodyVisible();
         }
-
-        list.forEach(a => {
-            
-            a.onclick = () => {
-                list.forEach(b => {
-                    if (a == b) {
-                        text.textContent = b.querySelector('span').textContent;
-                        b.classList.add('selected');
-                    } else {
-                        b.classList.remove('selected');
-                    }
-                })
+        
+        if (closeBtn) {
+            closeBtn.onclick = () => {
                 el.classList.remove('active');
+                bodyVisible();
+            }
+        }
+    })
+}
+
+let modalClasses = ['.mall-modal', '.great-modal', '.booking-modal', '.identify-modal', '.more-modal', '.purchase-modal'];
+modalClasses.forEach(cls => {
+    let modal = document.querySelector(cls);
+    let btns = document.querySelectorAll(cls + '__open');
+    if (btns.length) {
+        btns.forEach(btn => {
+            btn.onclick = e => {
+                e.preventDefault();
+                modal.classList.add('active');
+                bodyHidden();
             }
         })
+    }
+})
+
+let selects = document.querySelector('.select');
+
+if (selects) {
+    const btn = selects.querySelector('.select_btn');
+    const text = selects.querySelector('.select_btn span');
+    const list = selects.querySelectorAll('.select_list li');
+
+    btn.onclick = () => {
+        selects.classList.toggle('active');
+    }
+
+    list.forEach(a => {
+        
+        a.onclick = () => {
+            list.forEach(b => {
+                if (a == b) {
+                    text.textContent = b.querySelector('span').textContent;
+                    b.classList.add('selected');
+                } else {
+                    b.classList.remove('selected');
+                }
+            })
+            selects.classList.remove('active');
+        }
+    })
+}
+
+let mallModal = document.querySelector('.mall-modal');
+let mallModalBtns = document.querySelectorAll('.mall-modal .btns button');
+
+if (mallModalBtns.length) {
+    mallModalBtns.forEach((btn, btnID) => {
+        btn.onclick = () => {
+            if (selects) {
+                const list = selects.querySelectorAll('.select_list li');
+                list[btnID].click();
+            }
+            mallModal.classList.remove('active');
+            bodyVisible();
+        }
     })
 }
 
