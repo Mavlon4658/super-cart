@@ -1199,6 +1199,7 @@ button {
   .mall__card_item h3 {
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
   }
 }
 .mall__card_item ul {
@@ -1212,6 +1213,8 @@ button {
   .mall__card_item ul {
     gap: 5px;
     margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
   }
 }
 .mall__card_item ul li {

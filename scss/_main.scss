@@ -654,6 +654,7 @@
                 @include media(576) {
                     font-size: 24px;
                     margin-bottom: 20px;
+                    text-align: center;
                 }
             }
 
@@ -667,6 +668,8 @@
                 @include media(576) {
                     gap: 5px;
                     margin-bottom: 20px;
+                    align-items: center;
+                    text-align: center;
                 }
 
                 li {
