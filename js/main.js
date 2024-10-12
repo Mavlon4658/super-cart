@@ -27,7 +27,7 @@ if (modals.length) {
     })
 }
 
-let modalClasses = ['.mall-modal', '.great-modal', '.booking-modal', '.identify-modal', '.more-modal', '.purchase-modal'];
+let modalClasses = ['.mall-modal', '.great-modal', '.booking-modal', '.identify-modal', '.more-modal', '.purchase-modal', '.tarif-modal'];
 modalClasses.forEach(cls => {
     let modal = document.querySelector(cls);
     let btns = document.querySelectorAll(cls + '__open');
@@ -53,9 +53,13 @@ if (selects) {
         selects.classList.toggle('active');
     }
 
-    list.forEach(a => {
+    list.forEach((a, idx) => {
         
         a.onclick = () => {
+            if (idx == 0) {
+                document.querySelector('.tarif-modal').classList.add('active')
+                console.log(idx);
+            }
             list.forEach(b => {
                 if (a == b) {
                     text.textContent = b.querySelector('span').textContent;
@@ -75,10 +79,6 @@ let mallModalBtns = document.querySelectorAll('.mall-modal .btns button');
 if (mallModalBtns.length) {
     mallModalBtns.forEach((btn, btnID) => {
         btn.onclick = () => {
-            if (selects) {
-                const list = selects.querySelectorAll('.select_list li');
-                list[btnID].click();
-            }
             mallModal.classList.remove('active');
             bodyVisible();
         }
@@ -235,6 +235,12 @@ if (texts.length) {
         }
     })
 }
+
+let tarifModalSwp = new Swiper('.tarif-modal .swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    // initialSlide: 3,
+})
 
 document.addEventListener('click', (e) => {
     if (selects.length) {
