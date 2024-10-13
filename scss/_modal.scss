@@ -245,8 +245,12 @@
         overflow: visible;
         user-select: none;
         
+        @include media(576) {
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+        }
     }
-    
+
     @include media(576) {
         .swiper-3d .swiper-slide-shadow-right,
         .swiper-3d .swiper-slide-shadow-left {

@@ -2840,6 +2840,12 @@ button {
           user-select: none;
 }
 @media screen and (max-width: 576px) {
+  .tarif-modal .swiper {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+}
+@media screen and (max-width: 576px) {
   .tarif-modal .swiper-3d .swiper-slide-shadow-right,
   .tarif-modal .swiper-3d .swiper-slide-shadow-left {
     background: none !important;

@@ -8,20 +8,29 @@ const bodyVisible = () => {
 
 let tarifModalSwp = new Swiper('.tarif-modal .swiper', {
     slidesPerView: 1,
-    spaceBetween: -30,
+    spaceBetween: 20,
     initialSlide: 1,
-    speed: 300,
+    speed: 200,
     loop: true,
     effect: 'coverflow',
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
-        depth: 5,
-        modifier: 25
+        depth: 3,
+        modifier: 15,
+    },
+    lazy: {
+        loadPrevNext: true,
     },
     breakpoints: {
         576: {
-            spaceBetween: 50
+            spaceBetween: 50,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 5,
+                modifier: 25
+            },
         }
     }
 })
