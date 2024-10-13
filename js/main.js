@@ -16,7 +16,7 @@ let tarifModalSwp = new Swiper('.tarif-modal .swiper', {
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
-        depth: 3,
+        depth: 10,
         modifier: 15,
     },
     lazy: {
@@ -87,6 +87,9 @@ if (selects) {
         a.onclick = () => {
             if (idx == 0) {
                 document.querySelector('.tarif-modal').classList.add('active')
+                setTimeout(() => {
+                    tarifModalSwp.update();
+                }, 50);
             }
             list.forEach(b => {
                 if (a == b) {
