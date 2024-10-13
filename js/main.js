@@ -27,7 +27,7 @@ if (modals.length) {
     })
 }
 
-let modalClasses = ['.mall-modal', '.great-modal', '.booking-modal', '.identify-modal', '.more-modal', '.purchase-modal', '.tarif-modal'];
+let modalClasses = ['.mall-modal', '.great-modal', '.booking-modal', '.identify-modal', '.more-modal', '.purchase-modal'];
 modalClasses.forEach(cls => {
     let modal = document.querySelector(cls);
     let btns = document.querySelectorAll(cls + '__open');
@@ -238,17 +238,23 @@ if (texts.length) {
 
 let tarifModalSwp = new Swiper('.tarif-modal .swiper', {
     slidesPerView: 1,
-    spaceBetween: 0,
-    // initialSlide: 3,
+    spaceBetween: 30,
+    initialSlide: 1,
+    loop: true,
+    effect: 'coverflow',
+    coverflowEffect: {
+        rotate: 0,
+        stretch: -1,
+        depth: 10,
+        modifier: 25
+    },
 })
 
 document.addEventListener('click', (e) => {
-    if (selects.length) {
-        selects.forEach(el => {
-            const isClickedInsideDiv = e.composedPath().includes(el)
-            if (!isClickedInsideDiv) {
-                el.classList.remove('active');
-            }
-        })
+    if (selects) {
+        const isClickedInsideDiv = e.composedPath().includes(selects)
+        if (!isClickedInsideDiv) {
+            selects.classList.remove('active');
+        }
     }
 })
