@@ -248,6 +248,8 @@
         @include media(576) {
             transform: translate3d(0, 0, 0);
             will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            -webkit-backface-visibility: hidden;
         }
     }
 
@@ -403,7 +405,7 @@
         .swiper-3d .swiper-slide-shadow-left {
             background: none !important;
         }
-        
+
         &__card {
             transform: scale(0.85);
         }

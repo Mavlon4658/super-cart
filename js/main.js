@@ -22,6 +22,13 @@ let tarifModalSwp = new Swiper('.tarif-modal .swiper', {
     lazy: {
         loadPrevNext: true,
     },
+    on: {
+        transitionStart: function() {
+            window.requestAnimationFrame(() => {
+                tarifModalSwp.update();
+            });
+        },
+    },
     breakpoints: {
         576: {
             spaceBetween: 50,

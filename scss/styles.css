@@ -2843,6 +2843,8 @@ button {
   .tarif-modal .swiper {
     transform: translate3d(0, 0, 0);
     will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
   }
 }
 .tarif-modal__card {
