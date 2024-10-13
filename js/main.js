@@ -6,6 +6,26 @@ const bodyVisible = () => {
     document.querySelector('body').style.overflow = 'visible';
 }
 
+let tarifModalSwp = new Swiper('.tarif-modal .swiper', {
+    slidesPerView: 1,
+    spaceBetween: -30,
+    initialSlide: 1,
+    speed: 300,
+    loop: true,
+    effect: 'coverflow',
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 5,
+        modifier: 25
+    },
+    breakpoints: {
+        576: {
+            spaceBetween: 50
+        }
+    }
+})
+
 const modals = document.querySelectorAll('.modal');
 
 if (modals.length) {
@@ -58,7 +78,6 @@ if (selects) {
         a.onclick = () => {
             if (idx == 0) {
                 document.querySelector('.tarif-modal').classList.add('active')
-                console.log(idx);
             }
             list.forEach(b => {
                 if (a == b) {
@@ -235,20 +254,6 @@ if (texts.length) {
         }
     })
 }
-
-let tarifModalSwp = new Swiper('.tarif-modal .swiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    initialSlide: 1,
-    loop: true,
-    effect: 'coverflow',
-    coverflowEffect: {
-        rotate: 0,
-        stretch: -1,
-        depth: 10,
-        modifier: 25
-    },
-})
 
 document.addEventListener('click', (e) => {
     if (selects) {
