@@ -439,5 +439,34 @@
                 }
             }
         }
+
+        &.card-3 {
+            .tarif__card {
+                &_left {
+                    h5 {
+                        margin-bottom: 38px;
+                    }
+
+                    .main-img {
+                        right: 91px;
+                    }
+                }
+            }
+        }
+
+        &.card-4 {
+            .tarif__card {
+                &_left {
+                    h5 {
+                        margin-bottom: 38px;
+                    }
+
+                    .main-img {
+                        left: 130px;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
     }
 }

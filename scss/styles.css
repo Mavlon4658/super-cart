@@ -42,7 +42,7 @@ address {
 }
 
 .wrapper {
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   min-height: 100svh;
 }
@@ -1926,6 +1926,19 @@ button {
 .tarif__card-2 .tarif__card_right .text h4 span {
   font-weight: bold;
 }
+.tarif__card.card-3 .tarif__card_left h5 {
+  margin-bottom: 38px;
+}
+.tarif__card.card-3 .tarif__card_left .main-img {
+  right: 91px;
+}
+.tarif__card.card-4 .tarif__card_left h5 {
+  margin-bottom: 38px;
+}
+.tarif__card.card-4 .tarif__card_left .main-img {
+  left: 130px;
+  bottom: 0;
+}
 
 .about {
   padding-bottom: 80px;
@@ -2978,7 +2991,7 @@ button {
   border: 1px solid #F9E42E;
 }
 
-@media (max-width: 992px) and (max-height: 730px) {
+@media (max-height: 730px) {
   .tarif-modal .swiper-3d .swiper-slide-shadow-right,
   .tarif-modal .swiper-3d .swiper-slide-shadow-left {
     background: none !important;
