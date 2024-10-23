@@ -92,12 +92,6 @@ if (selects) {
     list.forEach((a, idx) => {
         
         a.onclick = () => {
-            if (idx == 0) {
-                document.querySelector('.tarif-modal').classList.add('active')
-                setTimeout(() => {
-                    tarifModalSwp.update();
-                }, 50);
-            }
             list.forEach(b => {
                 if (a == b) {
                     text.textContent = b.querySelector('span').textContent;

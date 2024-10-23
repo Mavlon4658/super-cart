@@ -83,18 +83,25 @@ button {
 
         li {
             position: relative;
-            padding: 0 4px 0 16px;
             display: flex;
-            height: 20px;
             align-items: center;
             gap: 8px;
             font-size: 16px;
             cursor: pointer;
             user-select: none;
+            
+            
+            a {
+                padding: 0 4px 0 16px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                width: 100%;
 
-            @include media(1100) {
-                height: 48px;
-                padding: 0 4px 0 19px;
+                @include media(1100) {
+                    height: 48px;
+                    padding: 0 4px 0 19px;
+                }
             }
             
             span {
